@@ -149,15 +149,114 @@
     <div class="container">
         <header>
             <h1>A Practical Guide to Statistical Estimators</h1>
-            <p>Understanding how to evaluate and prove the properties of estimators.</p>
+            <p>From foundational concepts to advanced estimation techniques.</p>
         </header>
 
         <main>
+            <!-- Population and Sample Section -->
+            <section id="population-sample" class="card">
+                <h2>1. Population and Sample</h2>
+                <p>The first step in any statistical study is to define the groups you're interested in. This is where the concepts of population and sample come in.</p>
+                <div class="definition">
+                    <ul>
+                        <li>A <strong>Population</strong> is the entire collection of individuals, items, or events that you want to make inferences about. It's the "whole group".</li>
+                        <li>A <strong>Sample</strong> is a subset of the population that is selected for analysis. Since studying an entire population is often impractical or impossible, we use a sample to draw conclusions about it.</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <h3>Example</h3>
+                    <p>An educational researcher wants to study the average IQ of all 10th-grade students in a country.</p>
+                    <ul>
+                        <li><strong>Population:</strong> All 10th-grade students in the country.</li>
+                        <li><strong>Sample:</strong> A group of 500 10th-grade students selected from various schools across the country.</li>
+                    </ul>
+                    <p>The goal is to use the average IQ of the 500 students in the sample to estimate the average IQ of the entire population.</p>
+                </div>
+            </section>
+
+            <!-- Types of Sampling Section -->
+            <section id="sampling-types" class="card">
+                <h2>2. Types of Sampling</h2>
+                <p>How you choose your sample is critical. A biased sampling method can lead to incorrect conclusions. Here are two fundamental probability-based methods.</p>
+                <div class="definition">
+                    <p><strong>Simple Random Sampling (SRS):</strong> Every member of the population has an equal chance of being selected, and every possible sample of a given size has an equal chance of being chosen. This is like drawing names from a hat.</p>
+                    <p><strong>Stratified Sampling:</strong> The population is first divided into non-overlapping subgroups called 'strata'. Then, a simple random sample is taken from each stratum. This ensures that all subgroups are represented in the final sample.</p>
+                </div>
+                <div class="example-box">
+                    <h3>Example</h3>
+                    <p>A company with 1000 employees wants to survey their job satisfaction. The company has 700 office workers and 300 factory workers.</p>
+                    <ul>
+                        <li><strong>Using SRS:</strong> The company could randomly select 100 employees from the list of all 1000. By chance, they might end up with very few factory workers.</li>
+                        <li><strong>Using Stratified Sampling:</strong> The company defines two strata: office workers and factory workers. They could then randomly sample 70 office workers and 30 factory workers. This guarantees the sample reflects the company's workforce structure.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Errors in Sampling Section -->
+            <section id="sampling-errors" class="card">
+                <h2>3. Errors in Sampling</h2>
+                <p>No sample can perfectly represent the population. The discrepancy between a sample result and the true population result is known as sampling error. It's a natural phenomenon, not a mistake.</p>
+                <div class="definition">
+                    <p><strong>Sampling Error</strong> is the difference between a sample statistic (e.g., sample mean, $\bar{x}$) and the corresponding population parameter (e.g., population mean, $\mu$). It arises because the sample is not a perfect representation of the population.</p>
+                    <p><strong>Non-Sampling Error</strong> includes all other types of errors, such as data entry mistakes, biased questions, or non-response from participants. These are typically human errors and can be minimized with careful study design.</p>
+                </div>
+                 <div class="example-box">
+                    <h3>Example</h3>
+                    <p>Suppose the true average height of all adult males in a city is $\mu = 175$ cm. You take a random sample of 50 men and find their average height is $\bar{x} = 173.8$ cm.</p>
+                    <ul>
+                        <li>The <strong>sampling error</strong> for this sample is $173.8 - 175 = -1.2$ cm.</li>
+                        <li>If you had also incorrectly measured one person as 160 cm when they were actually 170 cm, that would be a <strong>non-sampling error</strong>.</li>
+                    </ul>
+                    <p>Generally, increasing the sample size reduces the sampling error.</p>
+                </div>
+            </section>
+
+            <!-- Parameter and Statistic Section -->
+            <section id="parameter-statistic" class="card">
+                <h2>4. Parameter and Statistic</h2>
+                <p>These two terms are fundamental to statistics. They both describe a numerical characteristic, but one relates to the population and the other to the sample.</p>
+                <div class="definition">
+                    <ul>
+                        <li>A <strong>Parameter</strong> is a numerical value that describes a characteristic of a <strong>population</strong>. We often use Greek letters to denote parameters (e.g., $\mu, \sigma, P$). The true value of a parameter is usually unknown.</li>
+                        <li>A <strong>Statistic</strong> is a numerical value that describes a characteristic of a <strong>sample</strong>. We use Latin letters to denote statistics (e.g., $\bar{x}, s, \hat{p}$). We calculate statistics from our sample data to estimate unknown parameters.</li>
+                    </ul>
+                </div>
+                 <div class="example-box">
+                    <h3>Example: Distinguishing the Terms</h3>
+                    <p>You want to know the proportion of all voters in a state who support a certain candidate.</p>
+                    <ul>
+                        <li>The true proportion of all voters is the <strong>parameter</strong>, $P$.</li>
+                        <li>You poll a sample of 1,200 voters and find that 54% of them support the candidate. The value 0.54 is the <strong>statistic</strong>, $\hat{p}$.</li>
+                    </ul>
+                    <p>Here, the statistic $\hat{p}=0.54$ is used as an estimate for the unknown parameter $P$.</p>
+                </div>
+            </section>
+
+            <!-- Sampling Distribution and Standard Error Section -->
+            <section id="sampling-distribution" class="card">
+                <h2>5. Sampling Distribution and Standard Error</h2>
+                <p>If we took many different samples from the same population, we would get a different sample mean each time. The distribution of all these possible sample means is called the sampling distribution.</p>
+                <div class="definition">
+                    <p>A <strong>Sampling Distribution</strong> is the probability distribution of a statistic (like the sample mean) obtained through a large number of samples of the same size from the same population.</p>
+                    <p>The <strong>Standard Error (SE)</strong> is the standard deviation of a sampling distribution. It measures the typical or average distance between the sample statistic and the population parameter. A smaller SE implies a more precise estimate.</p>
+                </div>
+                 <div class="example-box">
+                    <h3>Example: Standard Error of the Mean</h3>
+                    <p>The formula for the standard error of the sample mean ($\bar{x}$) is:</p>
+                    $$ SE(\bar{x}) = \frac{\sigma}{\sqrt{n}} $$
+                    <p>Where $\sigma$ is the population standard deviation and $n$ is the sample size.</p>
+                    <p>Suppose a population has a standard deviation of $\sigma=15$. You take a sample of size $n=100$. The standard error of your sample mean would be:</p>
+                    $$ SE(\bar{x}) = \frac{15}{\sqrt{100}} = \frac{15}{10} = 1.5 $$
+                    <p>This means that, on average, sample means from samples of size 100 are expected to be about 1.5 units away from the true population mean $\mu$. If you increased your sample size to $n=225$, the standard error would decrease: $SE(\bar{x}) = \frac{15}{\sqrt{225}} = \frac{15}{15} = 1$.</p>
+                </div>
+            </section>
+
+
             <!-- Unbiasedness Section -->
             <section id="unbiasedness" class="card">
-                <h2>1. Unbiasedness</h2>
-                <p>An estimator is unbiased if its expected value (its long-run average) is equal to the true population parameter it's trying to estimate.</p>
-                <div class="definition">An estimator $\hat{\theta}$ is an <strong>unbiased estimator</strong> of a parameter $\theta$ if its expected value is equal to $\theta$. $$ E[\hat{\theta}] = \theta $$</div>
+                <h2>6. Unbiasedness</h2>
+                <p>Unbiasedness is a highly desirable property for an estimator. It means that the estimator does not systematically over or underestimate the parameter. While any single estimate might be off, an unbiased estimator is correct "on average" over many repeated samples. The difference between the estimator's expected value and the true parameter is called the bias.</p>
+                <div class="definition">An estimator $\hat{\theta}$ is an <strong>unbiased estimator</strong> of a parameter $\theta$ if its expected value is equal to $\theta$. $$ E[\hat{\theta}] = \theta $$ The <strong>bias</strong> is defined as $Bias(\hat{\theta}) = E[\hat{\theta}] - \theta$. For an unbiased estimator, the bias is 0.</div>
                 
                 <div class="exam-question">
                     <h3>Exam Question 1: Unbiasedness of Sample Variance</h3>
@@ -182,10 +281,28 @@
 
             <!-- Consistency Section -->
             <section id="consistency" class="card">
-                <h2>2. Consistency</h2>
-                <p>A consistent estimator gets more accurate as you collect more data, converging to the true value of the parameter as the sample size ($n$) grows to infinity.</p>
-                <div class="definition">An estimator $\hat{\theta}_n$ is <strong>consistent</strong> if for any small $\epsilon > 0$, $\lim_{n \to \infty} P(|\hat{\theta}_n - \theta| < \epsilon) = 1$. A sufficient condition is that its bias and variance both go to zero as $n \to \infty$.</div>
+                <h2>7. Consistency</h2>
+                <p>Consistency is an asymptotic property, meaning it describes the estimator's behavior as the sample size grows infinitely large. It ensures that with enough data, our estimate will almost certainly be close to the true parameter value.</p>
+                <div class="definition">An estimator $\hat{\theta}_n$ is <strong>consistent</strong> if it converges in probability to the true parameter $\theta$. Formally, for any small $\epsilon > 0$: $$ \lim_{n \to \infty} P(|\hat{\theta}_n - \theta| < \epsilon) = 1 $$</div>
 
+                <div class="proof-box">
+                    <h3>Sufficient Condition for Consistency</h3>
+                    <p>A common method to prove consistency is to show that the Mean Squared Error (MSE) of the estimator approaches zero as $n \to \infty$. Since $MSE(\hat{\theta}) = Var(\hat{\theta}) + (Bias(\hat{\theta}))^2$, this is equivalent to showing two conditions:</p>
+                    <ol>
+                        <li>The bias approaches zero: $\lim_{n \to \infty} Bias(\hat{\theta}_n) = 0$ (The estimator is asymptotically unbiased).</li>
+                        <li>The variance approaches zero: $\lim_{n \to \infty} Var(\hat{\theta}_n) = 0$.</li>
+                    </ol>
+                </div>
+
+                <div class="proof-box">
+                    <h3>Invariance Property of Consistent Estimators</h3>
+                    <p>This useful property states that if $\hat{\theta}_n$ is a consistent estimator for $\theta$ and $g$ is a function that is continuous at $\theta$, then $g(\hat{\theta}_n)$ is a consistent estimator for $g(\theta)$.</p>
+                    <p><strong>Short Proof:</strong></p>
+                    <p>By definition of consistency, $\hat{\theta}_n$ converges in probability to $\theta$. By the definition of continuity for a function $g$ at point $\theta$, for any $\epsilon > 0$, there exists a $\delta > 0$ such that if $|\hat{\theta}_n - \theta| < \delta$, then $|g(\hat{\theta}_n) - g(\theta)| < \epsilon$.
+                    Since $\hat{\theta}_n$ is consistent, the probability $P(|\hat{\theta}_n - \theta| < \delta)$ approaches 1 as $n \to \infty$.
+                    This implies that the probability $P(|g(\hat{\theta}_n) - g(\theta)| < \epsilon)$ must also approach 1. Therefore, $g(\hat{\theta}_n)$ is a consistent estimator for $g(\theta)$.</p>
+                </div>
+                
                 <div class="exam-question">
                     <h3>Exam Question 1: An Inconsistent Estimator</h3>
                     <p>Let $X_1, \dots, X_n$ be a random sample with mean $\mu$ and variance $\sigma^2$. Is the estimator $\hat{\mu} = \frac{X_1 + X_n}{2}$ consistent for $\mu$?</p>
@@ -195,23 +312,12 @@
                     The limit is $\lim_{n \to \infty} Var(\hat{\mu}) = \frac{\sigma^2}{2} \neq 0$.
                     <strong>Conclusion:</strong> Since the variance does not approach 0, the estimator is <strong>not consistent</strong>.</p>
                 </div>
-                
-                <div class="exam-question">
-                    <h3>Exam Question 2: Consistency of Sample Variance</h3>
-                    <p>Show that the sample variance $S^2 = \frac{1}{n-1}\sum(X_i - \bar{X})^2$ is a consistent estimator for $\sigma^2$, assuming the population is Normally distributed.</p>
-                    <p><strong>Solution:</strong> We check the two conditions.
-                    <strong>1. Bias:</strong> From the previous section, we know $E[S^2] = \sigma^2$, so the bias is 0 for all $n$.
-                    <strong>2. Variance:</strong> For a sample from a Normal distribution, the variance of the sample variance is given by $Var(S^2) = \frac{2\sigma^4}{n-1}$.
-                    Now, we take the limit as $n \to \infty$:
-                    $$ \lim_{n \to \infty} Var(S^2) = \lim_{n \to \infty} \frac{2\sigma^4}{n-1} = 0 $$
-                    <strong>Conclusion:</strong> Since the estimator is unbiased and its variance approaches 0, $S^2$ is a <strong>consistent estimator</strong> for $\sigma^2$.</p>
-                </div>
             </section>
 
             <!-- Efficiency Section -->
             <section id="efficiency" class="card">
-                <h2>3. Efficiency</h2>
-                <p>If we have two unbiased estimators, the one with the smaller variance is more <strong>efficient</strong>. It's more precise.</p>
+                <h2>8. Efficiency</h2>
+                <p>If we have two unbiased estimators, the one with the smaller variance is more <strong>efficient</strong>. It's more precise because its estimates are less spread out and closer to the true parameter value on average.</p>
                 <div class="definition">Given two unbiased estimators, $\hat{\theta}_1$ and $\hat{\theta}_2$, the <strong>relative efficiency</strong> of $\hat{\theta}_1$ to $\hat{\theta}_2$ is $Eff(\hat{\theta}_1, \hat{\theta}_2) = \frac{Var(\hat{\theta}_2)}{Var(\hat{\theta}_1)}$. If $> 1$, $\hat{\theta}_1$ is more efficient.</div>
 
                 <div class="exam-question">
@@ -226,23 +332,13 @@
                     Comparing the variances: $\frac{\sigma^2}{3} \approx 0.333\sigma^2$ and $\frac{3\sigma^2}{8} = 0.375\sigma^2$.
                     Since $Var(\hat{\mu}_1) < Var(\hat{\mu}_2)$, the estimator $\hat{\mu}_1 = \bar{X}$ is <strong>more efficient</strong>.</p>
                 </div>
-                <div class="exam-question">
-                    <h3>Exam Question 2: Mean vs. Median</h3>
-                    <p>For a large sample of size $n=100$ from a Normal distribution with variance $\sigma^2=25$, calculate the relative efficiency of the sample mean ($\bar{X}$) with respect to the sample median ($\tilde{X}$).</p>
-                    <p><strong>Solution:</strong> We need the variances of the two estimators.
-                    $Var(\bar{X}) = \frac{\sigma^2}{n} = \frac{25}{100} = 0.25$.
-                    For large samples from a Normal distribution, the variance of the median is approximately $Var(\tilde{X}) \approx \frac{\pi\sigma^2}{2n} = \frac{\pi(25)}{2(100)} = \frac{25\pi}{200} = \frac{\pi}{8} \approx 0.3927$.
-                    The relative efficiency is:
-                    $$ Eff(\bar{X}, \tilde{X}) = \frac{Var(\tilde{X})}{Var(\bar{X})} = \frac{\pi/8}{1/4} = \frac{\pi}{8} \cdot 4 = \frac{\pi}{2} \approx 1.57 $$
-                    <strong>Conclusion:</strong> The sample mean is approximately 57% more efficient than the sample median for estimating the center of a Normal distribution.</p>
-                </div>
             </section>
             
             <!-- Sufficiency Section -->
             <section id="sufficiency" class="card">
-                <h2>4. Sufficiency & The Factorization Theorem</h2>
-                <p>A sufficient statistic squeezes every drop of information about the parameter out of the sample. The <strong>Neyman-Fisher Factorization Theorem</strong> is our tool to find one.</p>
-                <div class="definition"><strong>Factorization Theorem:</strong> A statistic $T(\mathbf{X})$ is sufficient for $\theta$ if the joint PDF/PMF can be factored as $f(\mathbf{x}|\theta) = g(T(\mathbf{x}), \theta) \cdot h(\mathbf{x})$.</div>
+                <h2>9. Sufficiency & The Factorization Theorem</h2>
+                <p>A sufficient statistic is a function of the sample data that captures all the relevant information about the unknown parameter $\theta$. Once a sufficient statistic is known, the original data provides no further information. This property is crucial for data reduction without losing information and is a key step in finding the best possible estimators (e.g., via the Rao-Blackwell Theorem).</p>
+                <div class="definition"><strong>Factorization Theorem:</strong> A statistic $T(\mathbf{X})$ is sufficient for $\theta$ if and only if the joint PDF/PMF can be factored as $f(\mathbf{x}|\theta) = g(T(\mathbf{x}), \theta) \cdot h(\mathbf{x})$, where $g$ depends on the data only through the statistic $T(\mathbf{x})$, and $h$ does not depend on $\theta$.</div>
                 <div class="exam-question">
                     <h3>Exam Question 1: Sufficiency for a Poisson Distribution</h3>
                     <p>Let $X_1, \dots, X_n$ be a random sample from a Poisson($\lambda$) distribution. Find a sufficient statistic for $\lambda$.</p>
@@ -252,24 +348,25 @@
                     The function $g$ depends on the data only through $T(\mathbf{x}) = \sum X_i$.
                     <strong>Conclusion:</strong> $T(\mathbf{X}) = \sum X_i$ is a sufficient statistic for $\lambda$.</p>
                 </div>
-                <div class="exam-question">
-                    <h3>Exam Question 2: Sufficiency for a Normal Mean</h3>
-                    <p>Let $X_1, \dots, X_n$ be a sample from a Normal distribution $N(\mu, 1)$ where the variance is known to be 1. Find a sufficient statistic for $\mu$.</p>
-                    <p><strong>Solution:</strong> The joint PDF is $f(\mathbf{x}|\mu) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}} e^{-\frac{(x_i-\mu)^2}{2}} = (\frac{1}{2\pi})^{n/2} e^{-\frac{1}{2}\sum(x_i-\mu)^2}$.
-                    Let's expand the exponent: $\sum(x_i-\mu)^2 = \sum(x_i^2 - 2\mu x_i + \mu^2) = \sum x_i^2 - 2\mu\sum x_i + n\mu^2$.
-                    Substitute this back into the PDF:
-                    $$ f(\mathbf{x}|\mu) = (\frac{1}{2\pi})^{n/2} e^{-\frac{1}{2}(\sum x_i^2 - 2\mu\sum x_i + n\mu^2)} $$
-                    $$ = \underbrace{(e^{\mu\sum x_i - \frac{n\mu^2}{2}})}_{g(T(\mathbf{x}), \mu)} \cdot \underbrace{((\frac{1}{2\pi})^{n/2} e^{-\frac{1}{2}\sum x_i^2})}_{h(\mathbf{x})} $$
-                    The function $g$ depends on the data only through $T(\mathbf{x}) = \sum X_i$.
-                    <strong>Conclusion:</strong> $T(\mathbf{X}) = \sum X_i$ (and by extension, $\bar{X}$) is a sufficient statistic for $\mu$.</p>
-                </div>
             </section>
 
             <!-- Cramer-Rao Section -->
             <section id="cramer-rao" class="card">
-                <h2>5. The Cramer-Rao Inequality</h2>
-                <p>This theorem gives a lower bound on the variance of any unbiased estimator. An estimator that meets this bound is the most efficient possible.</p>
-                <div class="definition"><strong>Cramer-Rao Lower Bound (CRLB):</strong> For an unbiased estimator $\hat{\theta}$, $Var(\hat{\theta}) \ge \frac{1}{I(\theta)}$, where $I(\theta)$ is the Fisher Information, $I(\theta) = -n \cdot E[ \frac{\partial^2}{\partial\theta^2} \ln f(X|\theta) ]$.</div>
+                <h2>10. The Cramer-Rao Inequality</h2>
+                <p>This theorem is a cornerstone of estimation theory. It provides a theoretical "speed limit" for how good an unbiased estimator can be by establishing a lower bound on its variance. An estimator whose variance reaches this bound is called a Minimum Variance Unbiased Estimator (MVUE) and is the most efficient possible.</p>
+                <div class="definition">
+                    <h3>Statements and Conditions</h3>
+                    <p>Let $X_1, \dots, X_n$ be a random sample from a distribution with PDF/PMF $f(x|\theta)$. Under certain <strong>regularity conditions</strong>, the variance of any unbiased estimator $\hat{\theta}$ of $\theta$ must satisfy:</p>
+                    $$ Var(\hat{\theta}) \ge \frac{1}{I(\theta)} $$
+                    The term on the right is the <strong>Cramer-Rao Lower Bound (CRLB)</strong>. $I(\theta)$ is the <strong>Fisher Information</strong>, which measures the amount of information that the data provides about the parameter $\theta$.
+                    $$ I(\theta) = n \cdot E\left[ \left( \frac{\partial}{\partial\theta} \ln f(X|\theta) \right)^2 \right] = -n \cdot E\left[ \frac{\partial^2}{\partial\theta^2} \ln f(X|\theta) \right] $$
+                    <strong>Key Regularity Conditions:</strong>
+                    <ul>
+                        <li>The parameter space for $\theta$ is an open interval.</li>
+                        <li>The support of the distribution does not depend on $\theta$.</li>
+                        <li>The derivatives of the log-likelihood exist and are well-behaved.</li>
+                    </ul>
+                </div>
                 <div class="exam-question">
                     <h3>Exam Question 1: CRLB for an Exponential Distribution</h3>
                     <p>For a sample from an Exponential($\theta$) distribution, show that the sample mean $\bar{X}$ attains the CRLB for $\theta$.</p>
@@ -281,25 +378,25 @@
                     <strong>2. Check $\bar{X}$:</strong> $\bar{X}$ is unbiased for $\theta$. Its variance is $Var(\bar{X}) = \frac{Var(X)}{n} = \frac{\theta^2}{n}$.
                     <strong>Conclusion:</strong> Since $Var(\bar{X}) = \text{CRLB}$, $\bar{X}$ is the MVUE for $\theta$.</p>
                 </div>
-                <div class="exam-question">
-                    <h3>Exam Question 2: CRLB for a Bernoulli trial</h3>
-                    <p>For a sample from a Bernoulli($p$) distribution, find the CRLB for an unbiased estimator of $p$. Does the sample proportion $\hat{p}=\bar{X}$ attain it?</p>
-                    <p><strong>Solution:</strong> The PMF is $f(x|p)=p^x(1-p)^{1-x}$.
-                    <strong>1. Find CRLB:</strong> The log-likelihood is $\ln f(x|p) = x\ln p + (1-x)\ln(1-p)$.
-                    The second derivative is $\frac{\partial^2}{\partial p^2} \ln f = -\frac{x}{p^2} - \frac{1-x}{(1-p)^2}$.
-                    Its expectation is $E[\dots] = -\frac{E[X]}{p^2} - \frac{1-E[X]}{(1-p)^2} = -\frac{p}{p^2} - \frac{1-p}{(1-p)^2} = -\frac{1}{p} - \frac{1}{1-p} = -\frac{1}{p(1-p)}$.
-                    The Fisher Information is $I(p) = -n(-\frac{1}{p(1-p)}) = \frac{n}{p(1-p)}$.
-                    The CRLB is $\frac{1}{I(p)} = \frac{p(1-p)}{n}$.
-                    <strong>2. Check $\hat{p}=\bar{X}$:</strong> $\hat{p}$ is unbiased for $p$. Its variance is $Var(\hat{p}) = Var(\bar{X}) = \frac{Var(X)}{n} = \frac{p(1-p)}{n}$.
-                    <strong>Conclusion:</strong> Since $Var(\hat{p}) = \text{CRLB}$, the sample proportion is the MVUE for $p$.</p>
-                </div>
             </section>
 
             <!-- MLE Section -->
             <section id="mle" class="card">
-                <h2>6. Maximum Likelihood Estimation (MLE)</h2>
-                <p>MLE finds the parameter value that makes the observed data most probable.</p>
-                <div class="proof-box"><h3>How to Find the MLE</h3><ol><li>Write the Likelihood Function $L(\theta) = \prod f(x_i|\theta)$.</li><li>Take the Log-Likelihood $\ell(\theta) = \ln L(\theta)$.</li><li>Differentiate $\ell(\theta)$ with respect to $\theta$, set to 0, and solve.</li></ol></div>
+                <h2>11. Maximum Likelihood Estimation (MLE)</h2>
+                <p>MLE is a very popular method for finding estimators. The core idea is simple: given the data you collected, what value of the parameter $\theta$ would make that data the <strong>most likely</strong> to have occurred? We find the parameter value that maximizes the likelihood function.</p>
+                <div class="proof-box">
+                    <h3>How to Find the MLE</h3>
+                    <p>First, write the Likelihood Function $L(\theta) = \prod f(x_i|\theta)$. Then take the Log-Likelihood $\ell(\theta) = \ln L(\theta)$. The MLE is the value $\hat{\theta}$ that maximizes $\ell(\theta)$. There are two primary cases for finding this maximum.</p>
+                    <p><strong>Case 1: The derivative method (most common)</strong></p>
+                    <ol>
+                        <li>Differentiate the log-likelihood: Calculate $\frac{d\ell}{d\theta}$.</li>
+                        <li>Set the derivative to zero and solve for $\theta$. This is the "score equation".</li>
+                        <li>Verify it's a maximum by checking that the second derivative is negative. The solution is the MLE, $\hat{\theta}_{MLE}$.</li>
+                    </ol>
+                    <p><strong>Case 2: The parameter space has boundaries</strong></p>
+                    <p>Sometimes the maximum occurs on the boundary of the parameter space, and the derivative may not be zero at that point. For example, for a Uniform(0, $\theta$) distribution, the likelihood is maximized when $\theta$ is as small as possible, but it must be at least as large as the maximum observation in the sample. In this case, $\hat{\theta}_{MLE} = \max(X_1, \dots, X_n)$.</p>
+                    <p><em>The following examples will focus on Case 1.</em></p>
+                </div>
                 <div class="exam-question">
                     <h3>Exam Question 1: MLE for a Geometric Distribution</h3>
                     <p>For a sample from a Geometric($p$) distribution, find the MLE for $p$. The PMF is $f(x|p) = (1-p)^x p$.</p>
