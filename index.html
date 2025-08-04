@@ -334,14 +334,15 @@
                     </div>
                     <div class="proof-box">
                         <h3>Fisher Information and Regularity Conditions</h3>
-                        <p>The quantity $I(\theta)$ is the <strong>Fisher Information</strong>, which measures the amount of information the data provides about the parameter $\theta$. A "peaked" likelihood function has high information, while a "flat" one has low information. It is calculated as:
-                        $$ I(\theta) = n \cdot E\left[ \left( \frac{\partial}{\partial\theta} \ln f(X|\theta) \right)^2 \right] $$
-                        The CRLB holds under these key <strong>regularity conditions</strong>:
+                        <p>The quantity $I(\theta)$ is the <strong>Fisher Information</strong>, which measures the amount of information the data provides about the parameter $\theta$. A "peaked" likelihood function has high information, while a "flat" one has low information. It has two equivalent forms:</p>
+                        $$ I(\theta) = n \cdot E\left[ \left( \frac{\partial}{\partial\theta} \ln f(X|\theta) \right)^2 \right] = -n \cdot E\left[ \frac{\partial^2}{\partial\theta^2} \ln f(X|\theta) \right] $$
+                        <p>The CRLB holds under these key <strong>regularity conditions</strong>:
                         <ul>
                             <li>The parameter space for $\theta$ is an open interval.</li>
                             <li>The support of the distribution (the set of possible values for X) does not depend on $\theta$.</li>
                             <li>The derivative of the log-likelihood with respect to $\theta$ exists and is well-behaved.</li>
                         </ul>
+                        </p>
                     </div>
                 </section>
                 <section class="card">
@@ -570,4 +571,3 @@
 
 </body>
 </html>
-
